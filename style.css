@@ -1,0 +1,97 @@
+:root {
+  --pale-lavender: #D9CDF7;
+  --russian-violet: #271A45;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--pale-lavender);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 13px;
+}
+
+.sofa-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.spinning-sofa-image {
+  width: 449px;
+}
+
+.spin-image, .stop-spin-image {
+  margin-left: 366px;
+}
+
+.spin-image {
+  width: 33px;
+}
+
+.stop-spin-image {
+  width: 16px;
+}
+
+.spin-image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.information-div {
+  color: var(--russian-violet);
+}
+
+.item-code, .item-price, .add-to-cart-button {
+  font-family: 'Lato', sans-serif;
+}
+
+.item-code {
+  font-weight: lighter;
+  font-size: 10px;
+  margin: 0;
+}
+
+.item-name {
+  font-family: 'Crimson Pro', serif;
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.item-price {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.add-to-cart-button {
+  text-transform: uppercase;
+  background-color: var(--pale-lavender);
+  padding: 8px 16px;
+  border: solid var(--russian-violet) 0.5px;
+  border-radius: 16px;
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--russian-violet);
+  color: var(--pale-lavender);
+  cursor: pointer;
+}
+
+@media(max-width: 586px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 469px) {
+  .spin-image, .stop-spin-image {
+    margin-left: 217px;
+  }
+
+  .sofa-image {
+    width: 300px;
+  }
+}
