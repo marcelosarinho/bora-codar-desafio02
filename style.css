@@ -1,97 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
-  --pale-lavender: #D9CDF7;
-  --russian-violet: #271A45;
+  --pale-lavender: #d9cdf7;
+  --russian-violet: #271a45;
+}
+
+html.animated button.btn-spin,
+html.animated img.static-sofa {
+  display: none;
+}
+
+html.animated button.btn-close,
+html.animated img.animated-sofa {
+  display: initial;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   background-color: var(--pale-lavender);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 13px;
+}
+
+body * {
+  color: var(--russian-violet);
+  font-family: "Lato", sans-serif;
+  line-height: 100%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  column-gap: 63px;
 }
 
 .sofa-div {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
-.spinning-sofa-image {
+.btn-close,
+.animated-sofa {
+  display: none;
+}
+
+.sofa-div > img {
   width: 449px;
+  height: 222px;
 }
 
-.spin-image, .stop-spin-image {
-  margin-left: 366px;
+.sofa-div button {
+  position: absolute;
+  right: 0;
+  border: 0;
+  background-color: transparent;
 }
 
-.spin-image {
-  width: 33px;
-}
-
-.stop-spin-image {
-  width: 16px;
-}
-
-.spin-image:hover {
+.btn-spin:hover,
+.btn-close:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.information-div {
-  color: var(--russian-violet);
-}
-
-.item-code, .item-price, .add-to-cart-button {
-  font-family: 'Lato', sans-serif;
-}
-
-.item-code {
-  font-weight: lighter;
+h4 {
+  font-weight: 300;
   font-size: 10px;
-  margin: 0;
 }
 
-.item-name {
-  font-family: 'Crimson Pro', serif;
+h1 {
+  font-family: "Crimson Pro", serif;
   font-size: 32px;
   margin: 12px 0;
 }
 
-.item-price {
+p {
   font-size: 16px;
   margin: 0 0 20px;
+  opacity: 0.67;
 }
 
-.add-to-cart-button {
+.item-div button {
   text-transform: uppercase;
-  background-color: var(--pale-lavender);
+  background-color: transparent;
   padding: 8px 16px;
   border: solid var(--russian-violet) 0.5px;
-  border-radius: 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
-.add-to-cart-button:hover {
+.item-div button:hover {
   background-color: var(--russian-violet);
   color: var(--pale-lavender);
   cursor: pointer;
 }
 
-@media(max-width: 586px) {
-  body {
+@media (max-width: 626px) {
+  main {
     flex-direction: column;
   }
 }
 
-@media(max-width: 469px) {
-  .spin-image, .stop-spin-image {
-    margin-left: 217px;
-  }
-
-  .sofa-image {
+@media (max-width: 497px) {
+  .sofa-div > img {
     width: 300px;
+    height: 200px;
   }
 }
